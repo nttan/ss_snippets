@@ -41,6 +41,16 @@ $gridField = new GridField(
 $fields->addFieldToTab('Root.Main', $gridField);
 ```
 
+### Pagination
+
+```
+public function PaginatedPages() {
+    $pagination = new PaginatedList($this->AllChildren(), Controller::curr()->request);
+    $pagination->setPageLength(15);
+    return $pagination;
+}
+```
+
 ###Site Config Tab
 
 ```
@@ -50,14 +60,4 @@ $fields->addFieldsToTab('Root.Settings.Tab',
         // Fields
     )
 );
-```
-
-### Pagination
-
-```
-public function PaginatedPages() {
-    $pagination = new PaginatedList($this->AllChildren(), Controller::curr()->request);
-    $pagination->setPageLength(15);
-    return $pagination;
-}
 ```
