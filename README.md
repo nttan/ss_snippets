@@ -3,7 +3,7 @@ ss_snippets
 
 Snippets for Silverstripe
 
-** Data Object
+###Data Object
 
 ```
 class SliderItem extends DataObject{
@@ -22,7 +22,7 @@ class SliderItem extends DataObject{
 }
 ```
 
-**Gridfield
+###Gridfield
 
 ```
 $config = GridFieldConfig_RelationEditor::create(10);
@@ -40,7 +40,7 @@ $gridField = new GridField(
 $fields->addFieldToTab('Root.Main', $gridField);
 ```
 
-** Site Config Tab
+###Site Config Tab
 
 ```
 $fields->findOrMakeTab('Root.Settings.Tab', 'Tab');
