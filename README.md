@@ -17,6 +17,7 @@ class SliderItem extends DataObject{
 
     function getCMSFields() {
         $fields = FieldList::create(TabSet::create('Root'));
+        // fields
         return $fields;
     }
 }
@@ -29,7 +30,7 @@ $config = GridFieldConfig_RelationEditor::create(10);
 $config->addComponent(new GridFieldSortableRows('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
 $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
-    'Thumbnail' => 'Thumbnail'
+    'Title' => 'Title'
 ));
 $gridField = new GridField(
     'Name',
