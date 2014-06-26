@@ -6,7 +6,7 @@ Snippets for Silverstripe
 ###Data Object
 
 ```
-class SliderItem extends DataObject{
+class Name extends DataObject{
     static $db = array (
         'SortOrder' => 'Int'
     );
