@@ -5,7 +5,7 @@ Snippets for Silverstripe
 
 ** Data Object
 
-``
+```
 class SliderItem extends DataObject{
     static $db = array (
         'SortOrder' => 'Int'
@@ -20,11 +20,11 @@ class SliderItem extends DataObject{
         return $fields;
     }
 }
-``
+```
 
 **Gridfield
 
-``
+```
 $config = GridFieldConfig_RelationEditor::create(10);
 $config->addComponent(new GridFieldSortableRows('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
@@ -38,15 +38,15 @@ $gridField = new GridField(
     $config
 );
 $fields->addFieldToTab('Root.Main', $gridField);
-``
+```
 
 ** Site Config Tab
 
-``
+```
 $fields->findOrMakeTab('Root.Settings.Tab', 'Tab');
 $fields->addFieldsToTab('Root.Settings.Tab',
     array(
         // Fields
     )
 );
-``
+```
