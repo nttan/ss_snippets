@@ -51,3 +51,13 @@ $fields->addFieldsToTab('Root.Settings.Tab',
     )
 );
 ```
+
+### Pagination
+
+```
+public function PaginatedPages() {
+    $pagination = new PaginatedList($this->AllChildren(), Controller::curr()->request);
+    $pagination->setPageLength(15);
+    return $pagination;
+}
+```
