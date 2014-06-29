@@ -41,6 +41,31 @@ $gridField = new GridField(
 $fields->addFieldToTab('Root.Main', $gridField);
 ```
 
+### Model Admin
+
+```
+class CustomModelAdmin extends ModelAdmin {
+
+    private static $managed_models = array(
+        'Model'
+    );
+    private static $url_priority = 100;
+    private static $url_segment = 'models';
+    private static $menu_title = 'models';
+
+    private static $url_handlers = array(
+        '$ModelClass/$Action' => 'handleAction',
+        '$ModelClass/$Action/$ID' => 'handleAction',
+    );
+
+    public function getEditForm($id = null, $fields = null) {
+        $form = parent::getEditForm($id, $fields);
+        // Form biz
+        return $form;
+    }
+}
+```
+
 ### Pagination
 
 ```
