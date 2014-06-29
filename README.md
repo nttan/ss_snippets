@@ -46,6 +46,7 @@ $fields->addFieldToTab('Root.Main', $gridField);
 ```
 class CustomModelAdmin extends ModelAdmin {
 
+    //private static $menu_icon = 'path/to/image.png';
     private static $managed_models = array(
         'Model'
     );
