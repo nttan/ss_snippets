@@ -67,6 +67,15 @@ class CustomModelAdmin extends ModelAdmin {
 }
 ```
 
+### Settings
+
+```
+function getSettingsFields() {
+    $fields = parent::getSettingsFields();
+    return $fields;
+}
+```
+
 ### Pagination
 
 ```
