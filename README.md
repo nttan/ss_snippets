@@ -70,7 +70,7 @@ class CustomModelAdmin extends ModelAdmin {
 ### Settings
 
 ```
-function getSettingsFields() {
+public function getSettingsFields() {
     $fields = parent::getSettingsFields();
     return $fields;
 }
