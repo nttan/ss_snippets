@@ -106,3 +106,12 @@ $fields->addFieldsToTab('Root.Settings.Tab',
     )
 );
 ```
+
+#Config
+
+###Dev Mode
+
+```
+Director:
+  environment_type: 'dev'
+```
