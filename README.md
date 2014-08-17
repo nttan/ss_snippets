@@ -115,3 +115,9 @@ $fields->addFieldsToTab('Root.Settings.Tab',
 Director:
   environment_type: 'dev'
 ```
+
+###Additional Memory
+
+```
+ini_set('memory_limit','1000M');
+```
