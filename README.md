@@ -3,6 +3,16 @@ ss_snippets
 
 Snippets for Silverstripe
 
+###Array List Loop
+```
+$arrayList = new ArrayList();
+foreach($foo as $item){
+    $arrayList->push(new ArrayData(array(
+        'Title' => $item->Title
+    )));
+}
+```
+
 ###Data Object
 
 ```
