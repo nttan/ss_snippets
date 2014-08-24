@@ -3,6 +3,13 @@ ss_snippets
 
 Snippets for Silverstripe
 
+###Config Biz
+
+```
+// Set a default admin
+Security::setDefaultAdmin('admin', 'password');
+```
+
 ###Array List Loop
 ```
 $arrayList = new ArrayList();
