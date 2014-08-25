@@ -9,6 +9,32 @@ Snippets for Silverstripe
 // Set a default admin
 Security::setDefaultAdmin('admin', 'password');
 ```
+```
+// Switch database based on server
+switch ($_SERVER['SERVER_NAME']) {
+    case 'pantry.local':
+    case '10.10.10.127':
+        $databaseConfig = array(
+            "type" => 'MySQLDatabase',
+            "server" => 'localhost',
+            "username" => '',
+            "password" => '',
+            "database" => '',
+            "path" => '',
+        );
+    break;
+    default:
+        $databaseConfig = array(
+            "type" => 'MySQLDatabase',
+            "server" => 'localhost',
+            "username" => '',
+            "password" => '',
+            "database" => '',
+            "path" => '',
+        );
+    break;
+}
+```
 
 ###Array List Loop
 ```
