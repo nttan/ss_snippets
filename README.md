@@ -84,6 +84,17 @@ $gridField = new GridField(
 $fields->addFieldToTab('Root.Main', $gridField);
 ```
 
+### CMS Fields
+
+#### Tab
+
+```
+$fields->findOrMakeTab('Root.Settings.TabName', 'Tab Name');
+$fields->addFieldsToTab('Root.Settings.TabName',
+    array()
+);
+```
+
 ### Model Admin
 
 ```
