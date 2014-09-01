@@ -23,8 +23,10 @@ ini_set('memory_limit','1000M');
 ```
 Security::setDefaultAdmin('admin', 'password');
 ```
+
+### Switch database based on server
+
 ```
-// Switch database based on server
 switch ($_SERVER['SERVER_NAME']) {
     case 'pantry.local':
     case '10.10.10.127':
