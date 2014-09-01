@@ -3,10 +3,24 @@ ss_snippets
 
 Snippets for Silverstripe
 
-###Config Biz
+#Config
+
+###Dev Mode
 
 ```
-// Set a default admin
+Director:
+  environment_type: 'dev'
+```
+
+###Additional Memory
+
+```
+ini_set('memory_limit','1000M');
+```
+
+### Default Admin
+
+```
 Security::setDefaultAdmin('admin', 'password');
 ```
 ```
@@ -149,19 +163,4 @@ $fields->addFieldsToTab('Root.Settings.Tab',
         // Fields
     )
 );
-```
-
-#Config
-
-###Dev Mode
-
-```
-Director:
-  environment_type: 'dev'
-```
-
-###Additional Memory
-
-```
-ini_set('memory_limit','1000M');
 ```
