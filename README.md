@@ -1,8 +1,3 @@
-ss_snippets
-===========
-
-Snippets for Silverstripe
-
 #Table of Contents
 
 1. Config
