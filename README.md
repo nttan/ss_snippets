@@ -18,7 +18,7 @@ Snippets for Silverstripe
   * [Model admin](#model-admin)
   * [Settings](#settings)
   * [Pagination](#pagination)
-  * [SiteConfig tab](#siteconfig-tab)
+  * [SiteConfig tab](#site-config-tab)
 3. Pages
   * [HomePage](#homepage)
 
