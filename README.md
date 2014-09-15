@@ -10,16 +10,17 @@ Snippets for Silverstripe
   * [Additional memory](#additional-memory)
   * [Default admin](#default-admin)
   * [Switch database based on server](#switch-database-based-on-server)
+2. Controller Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
   * [Gridfield](#gridfield)
-2. CMS Fields
+3. CMS Fields
   * [Tab](#tab)
   * [Model admin](#model-admin)
   * [Settings](#settings)
   * [Pagination](#pagination)
   * [SiteConfig tab](#site-config-tab)
-3. Pages
+4. Pages
   * [HomePage](#blank-homepage)
 
 #Config
