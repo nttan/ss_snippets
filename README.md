@@ -20,7 +20,7 @@ Snippets for Silverstripe
   * [Pagination](#pagination)
   * [SiteConfig tab](#site-config-tab)
 3. Pages
-  * [HomePage](#homepage)
+  * [HomePage](#blank-homepage)
 
 #Config
 
