@@ -18,13 +18,13 @@ Director:
 ini_set('memory_limit','1000M');
 ```
 
-### Default Admin
+###Default Admin
 
 ```
 Security::setDefaultAdmin('admin', 'password');
 ```
 
-### Switch database based on server
+###Switch database based on server
 
 ```
 switch ($_SERVER['SERVER_NAME']) {
@@ -100,9 +100,9 @@ $gridField = new GridField(
 $fields->addFieldToTab('Root.Main', $gridField);
 ```
 
-### CMS Fields
+###CMS Fields
 
-#### Tab
+####Tab
 
 ```
 $fields->findOrMakeTab('Root.Settings.TabName', 'Tab Name');
@@ -111,7 +111,7 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 );
 ```
 
-### Model Admin
+###Model Admin
 
 ```
 class CustomModelAdmin extends ModelAdmin {
@@ -137,7 +137,7 @@ class CustomModelAdmin extends ModelAdmin {
 }
 ```
 
-### Settings
+###Settings
 
 ```
 public function getSettingsFields() {
@@ -146,7 +146,7 @@ public function getSettingsFields() {
 }
 ```
 
-### Pagination
+###Pagination
 
 ```
 public function PaginatedPages() {
@@ -165,4 +165,34 @@ $fields->addFieldsToTab('Root.Settings.Tab',
         // Fields
     )
 );
+```
+
+##Pages
+
+###Blank HomePage
+
+```
+<?php
+
+class HomePage extends Page {
+
+    //private static $icon = '';
+
+    private static $db = array();
+
+    public function getCMSFields() {
+
+        $fields = parent::getCMSFields();
+
+        /* =========================================
+         * Fields
+         =========================================*/
+
+        return $fields;
+
+    }
+
+}
+
+class HomePage_Controller extends Page_Controller {}
 ```
