@@ -3,6 +3,25 @@ ss_snippets
 
 Snippets for Silverstripe
 
+#Table of Contents
+
+1. Config
+  * [Dev mode](#dev-mode)
+  * [Additional memory](#additional-memory)
+  * [Default admin](#default-admin)
+  * [Switch database based on server](#switch-database-based-on-server)
+  * [Array list loop](#array-list-loop)
+  * [Dataobject](#dataobject)
+  * [Gridfield](#gridfield)
+2. CMS Fields
+  * [Tab](#tab)
+  * [Model admin](#model-admin)
+  * [Settings](#settings)
+  * [Pagination](#pagination)
+  * [SiteConfig tab](#siteconfig-tab)
+3. Pages
+  * [HomePage](#homepage)
+
 #Config
 
 ###Dev Mode
