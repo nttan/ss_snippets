@@ -11,7 +11,7 @@ Snippets for Silverstripe
   * [Default admin](#default-admin)
   * [Switch database based on server](#switch-database-based-on-server)
   * [Array list loop](#array-list-loop)
-  * [Dataobject](#dataobject)
+  * [Dataobject](#data-object)
   * [Gridfield](#gridfield)
 2. CMS Fields
   * [Tab](#tab)
