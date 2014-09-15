@@ -5,7 +5,7 @@
   * [Additional memory](#additional-memory)
   * [Default admin](#default-admin)
   * [Switch database based on server](#switch-database-based-on-server)
-2. Controller Biz
+2. Model Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
   * [Gridfield](#gridfield)
@@ -66,6 +66,8 @@ switch ($_SERVER['SERVER_NAME']) {
     break;
 }
 ```
+
+##Model Biz
 
 ###Array List Loop
 ```
