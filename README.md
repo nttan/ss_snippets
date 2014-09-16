@@ -5,6 +5,7 @@
   * [Additional memory](#additional-memory)
   * [Default admin](#default-admin)
   * [Switch database based on server](#switch-database-based-on-server)
+  * [Remove image max width in HtmlEditorField](#remove-image-max-width-in-htmleditorfield)
 2. Model Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
@@ -37,6 +38,13 @@ ini_set('memory_limit','1000M');
 
 ```
 Security::setDefaultAdmin('admin', 'password');
+```
+
+###Remove image max-width in HtmlEditorField
+
+```
+HtmlEditorField:
+  insert_width: 1600
 ```
 
 ###Switch database based on server
