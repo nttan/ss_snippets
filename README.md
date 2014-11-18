@@ -10,6 +10,7 @@
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
   * [Gridfield](#gridfield)
+  * [Site Config Extension](#site-config-extension)
 3. CMS Fields
   * [Tab](#tab)
   * [Model admin](#model-admin)
@@ -123,6 +124,42 @@ $gridField = new GridField(
     $config
 );
 $fields->addFieldToTab('Root.Main', $gridField);
+```
+
+####Site Config Extension
+
+```
+/**
+ * Class SiteConfigExtension
+ */
+class SiteConfigExtension extends DataExtension {
+
+    public static $db = array();
+
+    /**
+     * @param FieldList $fields
+     */
+    public function updateCMSFields(FieldList $fields) {
+
+        /* =========================================
+         * Settings
+         =========================================*/
+
+        if (!$fields->fieldByName('Root.Settings')){
+            $fields->addFieldToTab('Root', new TabSet('Settings'));
+        }
+
+    }
+
+}
+```
+
+#####_Config
+
+```
+SiteConfig:
+  extensions:
+    - SiteConfigExtension
 ```
 
 ###CMS Fields
