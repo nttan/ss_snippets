@@ -239,6 +239,9 @@ $fields->addFieldsToTab('Root.Settings.Tab',
 ```
 <?php
 
+/**
+ * Class HomePage
+ */
 class HomePage extends Page {
 
     //private static $icon = '';
@@ -246,7 +249,6 @@ class HomePage extends Page {
     private static $db = array();
 
     public function getCMSFields() {
-
         $fields = parent::getCMSFields();
 
         /* =========================================
@@ -254,10 +256,12 @@ class HomePage extends Page {
          =========================================*/
 
         return $fields;
-
     }
 
 }
 
+/**
+ * Class HomePage_Controller
+ */
 class HomePage_Controller extends Page_Controller {}
 ```
