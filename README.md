@@ -92,15 +92,18 @@ foreach($foo as $item){
 
 ```
 class Name extends DataObject{
-    static $db = array (
+    
+    private static $db = array (
         'SortOrder' => 'Int'
     );
-    static $has_one = array (
+    
+    private static $has_one = array (
         'Page' => 'Page'
     );
+    
     private static $default_sort = 'SortOrder';
 
-    function getCMSFields() {
+    public function getCMSFields() {
         $fields = FieldList::create(TabSet::create('Root'));
         // fields
         return $fields;
