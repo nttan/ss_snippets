@@ -91,23 +91,32 @@ foreach($foo as $item){
 ###Data Object
 
 ```
+<?php
+
+/**
+ * Class Name
+ */
 class Name extends DataObject{
-    
+
     private static $db = array (
         'SortOrder' => 'Int'
     );
-    
+
     private static $has_one = array (
         'Page' => 'Page'
     );
-    
+
     private static $default_sort = 'SortOrder';
 
+    /**
+     * @return FieldList
+     */
     public function getCMSFields() {
         $fields = FieldList::create(TabSet::create('Root'));
         // fields
         return $fields;
     }
+    
 }
 ```
 
