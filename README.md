@@ -101,6 +101,9 @@ class Name extends DataObject{
     private static $db = array (
         'SortOrder' => 'Int'
     );
+    
+    private static $singular_name = 'Name';
+    private static $plural_name = 'Names';
 
     private static $has_one = array (
         'Page' => 'Page'
