@@ -191,9 +191,15 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 ###Model Admin
 
 ```
+<?php
+
+/**
+ * Class CustomModelAdmin
+ */
 class CustomModelAdmin extends ModelAdmin {
 
     //private static $menu_icon = 'path/to/image.png';
+    
     private static $managed_models = array(
         'Model'
     );
@@ -211,6 +217,7 @@ class CustomModelAdmin extends ModelAdmin {
         // Form biz
         return $form;
     }
+
 }
 ```
 
