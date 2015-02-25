@@ -144,12 +144,14 @@ $fields->addFieldToTab('Root.Main', $gridField);
 ####Site Config Extension
 
 ```
+<?php
+
 /**
  * Class SiteConfigExtension
  */
 class SiteConfigExtension extends DataExtension {
 
-    public static $db = array();
+    private static $db = array();
 
     /**
      * @param FieldList $fields
