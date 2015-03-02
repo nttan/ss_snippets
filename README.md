@@ -268,6 +268,9 @@ class HomePage extends Page {
     //private static $icon = '';
 
     private static $db = array();
+    
+    //private static $can_be_root = false;
+    //private static $allowed_children = array();
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
