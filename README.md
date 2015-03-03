@@ -109,6 +109,8 @@ class Name extends DataObject{
         'Page' => 'Page'
     );
 
+    //private static $summary_fields = array();
+
     private static $default_sort = 'SortOrder';
 
     /**
