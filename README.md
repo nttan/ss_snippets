@@ -112,6 +112,10 @@ class Name extends DataObject{
     //private static $summary_fields = array();
 
     private static $default_sort = 'SortOrder';
+    
+    //public function getCMSValidator() {
+    //    return new RequiredFields();
+    //}
 
     /**
      * @return FieldList
@@ -273,6 +277,10 @@ class HomePage extends Page {
     
     //private static $can_be_root = false;
     //private static $allowed_children = array();
+    
+    //public function getCMSValidator() {
+    //    return new RequiredFields();
+    //}
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
