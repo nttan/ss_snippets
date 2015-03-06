@@ -114,7 +114,7 @@ class Name extends DataObject{
     private static $default_sort = 'SortOrder';
     
     //public function getCMSValidator() {
-    //    return new RequiredFields();
+    //    return new RequiredFields(array());
     //}
 
     /**
@@ -279,7 +279,7 @@ class HomePage extends Page {
     //private static $allowed_children = array();
     
     //public function getCMSValidator() {
-    //    return new RequiredFields();
+    //    return new RequiredFields(array());
     //}
 
     public function getCMSFields() {
