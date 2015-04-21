@@ -96,7 +96,7 @@ foreach($foo as $item){
 /**
  * Class Name
  */
-class Name extends DataObject{
+class Name extends DataObject {
 
     private static $db = array (
         'SortOrder' => 'Int'
