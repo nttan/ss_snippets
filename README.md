@@ -135,9 +135,6 @@ class Name extends DataObject {
 $config = GridFieldConfig_RelationEditor::create(10);
 $config->addComponent(new GridFieldSortableRows('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
-$config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
-    'Title' => 'Title'
-));
 $gridField = new GridField(
     'Name',
     'Title',
@@ -164,9 +161,9 @@ class SiteConfigExtension extends DataExtension {
      */
     public function updateCMSFields(FieldList $fields) {
 
-        /* =========================================
+        /** =========================================
          * Settings
-         =========================================*/
+         ==========================================*/
 
         if (!$fields->fieldByName('Root.Settings')){
             $fields->addFieldToTab('Root', new TabSet('Settings'));
@@ -294,9 +291,9 @@ class HomePage extends Page {
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-        /* =========================================
+        /** =========================================
          * Fields
-         =========================================*/
+         ==========================================*/
 
         return $fields;
     }
