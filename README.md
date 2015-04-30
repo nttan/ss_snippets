@@ -1,6 +1,7 @@
 #Table of Contents
 
 1. Config
+  * [Comments](#comments)
   * [Dev mode](#dev-mode)
   * [Additional memory](#additional-memory)
   * [Default admin](#default-admin)
@@ -21,6 +22,24 @@
   * [HomePage](#blank-homepage)
 
 #Config
+
+###Comments
+
+####Section
+
+```
+/** =========================================
+ * Section
+ ==========================================*/
+```
+
+####Sub Section
+
+```
+/** -----------------------------------------
+ * Section
+ -------------------------------------------*/
+```
 
 ###Dev Mode
 
