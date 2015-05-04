@@ -227,7 +227,7 @@ class CustomModelAdmin extends ModelAdmin {
     private static $managed_models = array(
         'Model'
     );
-    private static $url_priority = 100;
+    //private static $menu_priority = 1;
     private static $url_segment = 'models';
     private static $menu_title = 'models';
 
