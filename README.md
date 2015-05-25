@@ -152,7 +152,7 @@ class Name extends DataObject {
 
 ```
 $config = GridFieldConfig_RelationEditor::create(10);
-$config->addComponent(new GridFieldSortableRows('SortOrder'))
+$config->addComponent(new GridFieldOrderableRows('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
 $gridField = new GridField(
     'Name',
