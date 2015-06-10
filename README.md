@@ -7,18 +7,20 @@
   * [Default admin](#default-admin)
   * [Switch database based on server](#switch-database-based-on-server)
   * [Remove image max width in HtmlEditorField](#remove-image-max-width-in-htmleditorfield)
-2. Model Biz
+2. Templates
+  * [Loop](#template-loop)
+3. Model Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
   * [Gridfield](#gridfield)
   * [Site Config Extension](#site-config-extension)
-3. CMS Fields
+4. CMS Fields
   * [Tab](#tab)
   * [Model admin](#model-admin)
   * [Settings](#settings)
   * [Pagination](#pagination)
   * [SiteConfig tab](#site-config-tab)
-4. Pages
+5. Pages
   * [HomePage](#blank-homepage)
 
 #Config
@@ -93,6 +95,43 @@ switch ($_SERVER['SERVER_NAME']) {
         );
     break;
 }
+```
+
+##Templates
+
+###Loop
+
+```
+<% if $Children %>
+    <section class="loop section">
+        <div class="container">
+            <div class="row">
+                <% loop $Children %>
+                    <article class="loop__item loop__item--{$FirstLast} loop__item--{$EvenOdd} article">
+                        <% if $Image %>
+                            <figure class="article__image">
+                                <a href="{$Link}" title="{$Title}">
+                                    {$Image}
+                                </a>
+                            </figure><!-- /.article__image -->
+                        <% end_if %>
+                        <h4 class="article__heading">
+                            <a href="{$Link}" title="{$Title}">{$MenuTitle}</a>
+                        </h4><!-- /.article__heading -->
+                        <% if $Content %>
+                            <div class="article__summary typography">
+                                {$Content.LimitWordCountXML(40)}
+                            </div><!-- /.article__summary typography -->
+                        <% end_if %>
+                        <div class="article__actions">
+                            <a href="$Link" class="btn--primary" title="{$Title}">Read more</a>
+                        </div><!-- /.article__actions -->
+                    </article><!-- /.loop__item loop__item--{$FirstLast} loop__item--{$EvenOdd} article -->
+                <% end_loop %>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.loop section -->
+<% end_if %>
 ```
 
 ##Model Biz
