@@ -104,34 +104,34 @@ switch ($_SERVER['SERVER_NAME']) {
 
 ```
 <% if $Children %>
-    <section class="loop section">
+    <section class="block">
         <div class="container">
             <div class="row">
                 <% loop $Children %>
-                    <article class="loop__item loop__item--{$FirstLast} loop__item--{$EvenOdd} article">
+                    <article class="block__item block__item--{$FirstLast} block__item--{$EvenOdd}">
                         <% if $Image %>
-                            <figure class="article__image">
+                            <figure class="block__item__image">
                                 <a href="{$Link}" title="{$Title}">
                                     {$Image}
                                 </a>
-                            </figure><!-- /.article__image -->
+                            </figure><!-- /.block__item__image -->
                         <% end_if %>
-                        <h4 class="article__heading">
+                        <h4 class="block__item__heading">
                             <a href="{$Link}" title="{$Title}">{$MenuTitle}</a>
-                        </h4><!-- /.article__heading -->
+                        </h4><!-- /.block__item__heading -->
                         <% if $Content %>
-                            <div class="article__summary typography">
+                            <div class="block__item__summary typography">
                                 {$Content.LimitWordCountXML(40)}
-                            </div><!-- /.article__summary typography -->
+                            </div><!-- /.block__item__summary typography -->
                         <% end_if %>
-                        <div class="article__actions">
+                        <div class="block__item__actions">
                             <a href="$Link" class="btn--primary" title="{$Title}">Read more</a>
-                        </div><!-- /.article__actions -->
-                    </article><!-- /.loop__item loop__item--{$FirstLast} loop__item--{$EvenOdd} article -->
+                        </div><!-- /.block__item__actions -->
+                    </article><!-- /.block__item block__item--{$FirstLast} block__item--{$EvenOdd} -->
                 <% end_loop %>
             </div><!-- /.row -->
         </div><!-- /.container -->
-    </section><!-- /.loop section -->
+    </section><!-- /.block -->
 <% end_if %>
 ```
 
