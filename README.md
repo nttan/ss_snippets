@@ -9,6 +9,7 @@
   * [Remove image max width in HtmlEditorField](#remove-image-max-width-in-htmleditorfield)
 2. Templates
   * [Loop](#template-loop)
+  * [Modal](#modal)
 3. Model Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
