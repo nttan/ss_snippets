@@ -127,7 +127,7 @@ switch ($_SERVER['SERVER_NAME']) {
                         <div class="block__item__actions">
                             <a href="$Link" class="btn--primary" title="{$Title}">Read more</a>
                         </div><!-- /.block__item__actions -->
-                    </article><!-- /.block__item block__item--{$FirstLast} block__item--{$EvenOdd} -->
+                    </article><!-- /.block__item -->
                 <% end_loop %>
             </div><!-- /.row -->
         </div><!-- /.container -->
