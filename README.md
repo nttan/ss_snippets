@@ -134,6 +134,29 @@ switch ($_SERVER['SERVER_NAME']) {
 <% end_if %>
 ```
 
+###Modal
+
+```
+<button type="button" class="btn--primary" data-toggle="modal" data-target="#modal">
+    Launch demo modal
+</button><!-- /.btn--primary -->
+<div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal__dialog" role="document">
+        <div class="modal__dialog__content">
+            <div class="modal__dialog__content__header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i></button>
+                <h4 class="modal__dialog__content__header__title" id="modalLabel">Modal title</h4>
+            </div><!-- /.modal__dialog__content__header -->
+            <div class="modal__dialog__content__body">
+            </div><!-- /.modal__dialog__content__body -->
+            <div class="modal__dialog__content__footer">
+                <button type="button" class="btn--inverse" data-dismiss="modal">Close</button>
+            </div><!-- /.modal__dialog__content__footer -->
+        </div><!-- /.modal__dialog__content -->
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+```
+
 ##Model Biz
 
 ###Array List Loop
