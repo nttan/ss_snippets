@@ -320,7 +320,7 @@ class CustomModelAdmin extends ModelAdmin {
              * This is just a precaution to ensure we got a GridField from dataFieldByName() which you should have
              */
             if($gridField instanceof GridField) {
-                $gridField->getConfig()->addComponent(new GridFieldSortableRows('SortOrder'));
+                $gridField->getConfig()->addComponent(new GridFieldOrderableRows('SortOrder'));
             }
         }
         
