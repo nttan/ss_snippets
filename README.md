@@ -241,10 +241,13 @@ class SiteConfigExtension extends DataExtension {
      * @param FieldList $fields
      */
     public function updateCMSFields(FieldList $fields) {
-
         /** =========================================
+         * @var FieldList $fields
+        ===========================================*/
+
+        /** -----------------------------------------
          * Settings
-         ==========================================*/
+        -------------------------------------------*/
 
         if (!$fields->fieldByName('Root.Settings')){
             $fields->addFieldToTab('Root', new TabSet('Settings'));
