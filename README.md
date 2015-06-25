@@ -330,6 +330,9 @@ class CustomModelAdmin extends ModelAdmin {
 ###Settings
 
 ```
+/**
+ * @return mixed
+ */
 public function getSettingsFields() {
     $fields = parent::getSettingsFields();
     return $fields;
@@ -339,7 +342,14 @@ public function getSettingsFields() {
 ###Pagination
 
 ```
+/**
+ * @return PaginatedList
+ */
 public function PaginatedPages() {
+    /** =========================================
+     * @var PaginatedList $pagination
+    ===========================================*/
+
     $pagination = new PaginatedList($this->AllChildren(), Controller::curr()->request);
     $pagination->setPageLength(15);
     return $pagination;
@@ -372,20 +382,30 @@ class HomePage extends Page {
     //private static $icon = '';
 
     private static $db = array();
-    
+
     //private static $can_be_root = false;
     //private static $allowed_children = array();
-    
-    //public function getCMSValidator() {
-    //    return new RequiredFields(array());
-    //}
 
+//    /**
+//     * @return RequiredFields
+//     */
+//    public function getCMSValidator() {
+//        return new RequiredFields(array());
+//    }
+
+    /**
+     * @return FieldList
+     */
     public function getCMSFields() {
+        /** =========================================
+         * @var FieldList $fields
+        ===========================================*/
+
         $fields = parent::getCMSFields();
 
-        /** =========================================
+        /** -----------------------------------------
          * Fields
-         ==========================================*/
+        -------------------------------------------*/
 
         return $fields;
     }
