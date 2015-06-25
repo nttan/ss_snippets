@@ -5,7 +5,6 @@
   * [Dev mode](#dev-mode)
   * [Additional memory](#additional-memory)
   * [Default admin](#default-admin)
-  * [Switch database based on server](#switch-database-based-on-server)
   * [Remove image max width in HtmlEditorField](#remove-image-max-width-in-htmleditorfield)
 2. Templates
   * [Loop](#template-loop)
@@ -68,34 +67,6 @@ Security::setDefaultAdmin('admin', 'password');
 ```
 HtmlEditorField:
   insert_width: 1600
-```
-
-###Switch database based on server
-
-```
-switch ($_SERVER['SERVER_NAME']) {
-    case 'pantry.local':
-    case '10.10.10.127':
-        $databaseConfig = array(
-            "type" => 'MySQLDatabase',
-            "server" => 'localhost',
-            "username" => '',
-            "password" => '',
-            "database" => '',
-            "path" => '',
-        );
-    break;
-    default:
-        $databaseConfig = array(
-            "type" => 'MySQLDatabase',
-            "server" => 'localhost',
-            "username" => '',
-            "password" => '',
-            "database" => '',
-            "path" => '',
-        );
-    break;
-}
 ```
 
 ##Templates
@@ -177,13 +148,17 @@ foreach($foo as $item){
 
 /**
  * Class Name
+ *
+ * @property int SortOrder
+ *
+ * @method Page Page
  */
 class Name extends DataObject {
 
     private static $db = array (
         'SortOrder' => 'Int'
     );
-    
+
     private static $singular_name = 'Name';
     private static $plural_name = 'Names';
 
@@ -194,33 +169,44 @@ class Name extends DataObject {
     //private static $summary_fields = array();
 
     private static $default_sort = 'SortOrder';
-    
-    //public function getCMSValidator() {
-    //    return new RequiredFields(array());
-    //}
+
+//    /**
+//     * @return RequiredFields
+//     */
+//    public function getCMSValidator() {
+//        return new RequiredFields(array());
+//    }
 
     /**
      * @return FieldList
      */
     public function getCMSFields() {
+        /** =========================================
+         * @var Foo $bar
+        ===========================================*/
+
         $fields = FieldList::create(TabSet::create('Root'));
-        // fields
+
+        /** -----------------------------------------
+         * Fields
+        -------------------------------------------*/
+
+//        $fields->addFieldToTab('Root.Main', $bar = TextField::create('Foo'));
+
         return $fields;
     }
-    
+
     /**
      * On Before Write
      */
     protected function onBeforeWrite() {
-        /**
-         * Set SortOrder
-         */
+        /** Set SortOrder */
         if (!$this->SortOrder) {
             $this->SortOrder = PortfolioImage::get()->max('SortOrder') + 1;
         }
         parent::onBeforeWrite();
     }
-    
+
 }
 ```
 
