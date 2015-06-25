@@ -279,6 +279,7 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 ```
 
 ###Model Admin
+[Uses the Grid Field Extensions Module](https://github.com/silverstripe-australia/silverstripe-gridfieldextensions)
 
 ```
 <?php
