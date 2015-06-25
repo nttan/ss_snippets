@@ -211,6 +211,7 @@ class Name extends DataObject {
 ```
 
 ###Gridfield
+[Uses the Grid Field Extensions Module](https://github.com/silverstripe-australia/silverstripe-gridfieldextensions)
 
 ```
 $config = GridFieldConfig_RelationEditor::create(10);
