@@ -288,12 +288,15 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 class CustomModelAdmin extends ModelAdmin {
 
     //private static $menu_icon = 'path/to/image.png';
-    
+
     private static $managed_models = array(
         'Model'
     );
+
     //private static $menu_priority = 1;
+
     private static $url_segment = 'models';
+
     private static $menu_title = 'models';
 
     private static $url_handlers = array(
@@ -302,9 +305,14 @@ class CustomModelAdmin extends ModelAdmin {
     );
 
     public function getEditForm($id = null, $fields = null) {
+        /** =========================================
+         * @var Form        $form
+         * @var GridField   $gridField
+        ===========================================*/
+
         $form = parent::getEditForm($id, $fields);
-        
-        if($this->modelClass=='Model' && $gridField=$form->Fields()->dataFieldByName($this->sanitiseClassName($this->modelClass))) {
+
+        if($this->modelClass == 'Model' && $gridField = $form->Fields()->dataFieldByName($this->sanitiseClassName($this->modelClass))) {
             /**
              * This is just a precaution to ensure we got a GridField from dataFieldByName() which you should have
              */
@@ -312,7 +320,7 @@ class CustomModelAdmin extends ModelAdmin {
                 $gridField->getConfig()->addComponent(new GridFieldOrderableRows('SortOrder'));
             }
         }
-        
+
         return $form;
     }
 
