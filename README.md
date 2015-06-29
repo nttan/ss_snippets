@@ -182,7 +182,7 @@ class Name extends DataObject {
      */
     public function getCMSFields() {
         /** =========================================
-         * @var Foo $bar
+         * @var FieldList $fields
         ===========================================*/
 
         $fields = FieldList::create(TabSet::create('Root'));
