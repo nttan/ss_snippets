@@ -79,7 +79,7 @@ HtmlEditorField:
         <div class="container">
             <div class="row">
                 <% loop $Children %>
-                    <article class="block__item block__item--{$FirstLast} block__item--{$EvenOdd}">
+                    <article class="block__item block__item--{$EvenOdd}<% if $FirstLast %> block__item--{$FirstLast}<% end_if %>">
                         <% if $Image %>
                             <figure class="block__item__image">
                                 <a href="{$Link}" title="{$Title}">
