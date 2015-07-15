@@ -202,7 +202,7 @@ class Name extends DataObject {
     protected function onBeforeWrite() {
         /** Set SortOrder */
         if (!$this->SortOrder) {
-            $this->SortOrder = PortfolioImage::get()->max('SortOrder') + 1;
+            $this->SortOrder = Foo::get()->max('SortOrder') + 1;
         }
         parent::onBeforeWrite();
     }
