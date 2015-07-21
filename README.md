@@ -149,7 +149,7 @@ foreach($foo as $item){
 /**
  * Class Name
  *
- * @property int SortOrder
+ * @property Int SortOrder
  *
  * @method Page Page
  */
