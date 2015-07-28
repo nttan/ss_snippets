@@ -134,7 +134,7 @@ HtmlEditorField:
 ###Array List Loop
 ```
 $arrayList = new ArrayList();
-foreach($foo as $item){
+foreach ($foo as $item) {
     $arrayList->push(new ArrayData(array(
         'Title' => $item->Title
     )));
@@ -153,16 +153,17 @@ foreach($foo as $item){
  *
  * @method Page Page
  */
-class Name extends DataObject {
+class Name extends DataObject
+{
 
-    private static $db = array (
+    private static $db = array(
         'SortOrder' => 'Int'
     );
 
     private static $singular_name = 'Name';
     private static $plural_name = 'Names';
 
-    private static $has_one = array (
+    private static $has_one = array(
         'Page' => 'Page'
     );
 
@@ -180,7 +181,8 @@ class Name extends DataObject {
     /**
      * @return FieldList
      */
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         /** =========================================
          * @var FieldList $fields
         ===========================================*/
@@ -189,7 +191,7 @@ class Name extends DataObject {
 
         /** -----------------------------------------
          * Fields
-        -------------------------------------------*/
+         * ----------------------------------------*/
 
 //        $fields->addFieldToTab('Root.Main', $bar = TextField::create('Foo'));
 
@@ -199,7 +201,8 @@ class Name extends DataObject {
     /**
      * On Before Write
      */
-    protected function onBeforeWrite() {
+    protected function onBeforeWrite()
+    {
         /** Set SortOrder */
         if (!$this->SortOrder) {
             $this->SortOrder = Foo::get()->max('SortOrder') + 1;
@@ -234,23 +237,25 @@ $fields->addFieldToTab('Root.Main', $gridField);
 /**
  * Class SiteConfigExtension
  */
-class SiteConfigExtension extends DataExtension {
+class SiteConfigExtension extends DataExtension
+{
 
     private static $db = array();
 
     /**
      * @param FieldList $fields
      */
-    public function updateCMSFields(FieldList $fields) {
+    public function updateCMSFields(FieldList $fields)
+    {
         /** =========================================
          * @var FieldList $fields
         ===========================================*/
 
         /** -----------------------------------------
          * Settings
-        -------------------------------------------*/
+         * ----------------------------------------*/
 
-        if (!$fields->fieldByName('Root.Settings')){
+        if (!$fields->fieldByName('Root.Settings')) {
             $fields->addFieldToTab('Root', new TabSet('Settings'));
         }
 
@@ -287,7 +292,8 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 /**
  * Class CustomModelAdmin
  */
-class CustomModelAdmin extends ModelAdmin {
+class CustomModelAdmin extends ModelAdmin
+{
 
     //private static $menu_icon = 'path/to/image.png';
 
@@ -306,19 +312,20 @@ class CustomModelAdmin extends ModelAdmin {
         '$ModelClass/$Action/$ID' => 'handleAction',
     );
 
-    public function getEditForm($id = null, $fields = null) {
+    public function getEditForm($id = null, $fields = null)
+    {
         /** =========================================
-         * @var Form        $form
-         * @var GridField   $gridField
+         * @var Form $form
+         * @var GridField $gridField
         ===========================================*/
 
         $form = parent::getEditForm($id, $fields);
 
-        if($this->modelClass == 'Model' && $gridField = $form->Fields()->dataFieldByName($this->sanitiseClassName($this->modelClass))) {
+        if ($this->modelClass == 'Model' && $gridField = $form->Fields()->dataFieldByName($this->sanitiseClassName($this->modelClass))) {
             /**
              * This is just a precaution to ensure we got a GridField from dataFieldByName() which you should have
              */
-            if($gridField instanceof GridField) {
+            if ($gridField instanceof GridField) {
                 $gridField->getConfig()->addComponent(new GridFieldOrderableRows('SortOrder'));
             }
         }
@@ -335,7 +342,8 @@ class CustomModelAdmin extends ModelAdmin {
 /**
  * @return mixed
  */
-public function getSettingsFields() {
+public function getSettingsFields()
+{
     $fields = parent::getSettingsFields();
     return $fields;
 }
@@ -347,7 +355,8 @@ public function getSettingsFields() {
 /**
  * @return PaginatedList
  */
-public function PaginatedPages() {
+public function PaginatedPages()
+{
     /** =========================================
      * @var PaginatedList $pagination
     ===========================================*/
@@ -379,7 +388,8 @@ $fields->addFieldsToTab('Root.Settings.Tab',
 /**
  * Class HomePage
  */
-class HomePage extends Page {
+class HomePage extends Page
+{
 
     //private static $icon = '';
 
@@ -398,7 +408,8 @@ class HomePage extends Page {
     /**
      * @return FieldList
      */
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         /** =========================================
          * @var FieldList $fields
         ===========================================*/
@@ -407,7 +418,7 @@ class HomePage extends Page {
 
         /** -----------------------------------------
          * Fields
-        -------------------------------------------*/
+         * -------------------------------------------*/
 
         return $fields;
     }
@@ -417,5 +428,7 @@ class HomePage extends Page {
 /**
  * Class HomePage_Controller
  */
-class HomePage_Controller extends Page_Controller {}
+class HomePage_Controller extends Page_Controller
+{
+}
 ```
