@@ -218,9 +218,9 @@ class Name extends DataObject
 
 ```
 $config = GridFieldConfig_RelationEditor::create(10);
-$config->addComponent(new GridFieldOrderableRows('SortOrder'))
+$config->addComponent(GridFieldOrderableRows::create('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
-$gridField = new GridField(
+$gridField = GridField::create(
     'Name',
     'Title',
     $this->owner->Items(),
