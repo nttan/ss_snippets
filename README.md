@@ -390,13 +390,25 @@ $fields->addFieldsToTab('Root.Settings.Tab',
  */
 class HomePage extends Page
 {
+    /**
+     * @var string
+     */
+//    private static $icon = '';
 
-    //private static $icon = '';
-
+    /**
+     * @var array
+     */
     private static $db = array();
 
-    //private static $can_be_root = false;
-    //private static $allowed_children = array();
+    /**
+     * @var bool
+     */
+//    private static $can_be_root = false;
+
+    /**
+     * @var array
+     */
+//    private static $allowed_children = array();
 
 //    /**
 //     * @return RequiredFields
@@ -418,7 +430,7 @@ class HomePage extends Page
 
         /** -----------------------------------------
          * Fields
-         * -------------------------------------------*/
+         * ----------------------------------------*/
 
         return $fields;
     }
