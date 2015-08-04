@@ -155,20 +155,38 @@ foreach ($foo as $item) {
  */
 class Name extends DataObject
 {
-
+    /**
+     * @var array
+     */
     private static $db = array(
         'SortOrder' => 'Int'
     );
 
+    /**
+     * @var string
+     */
     private static $singular_name = 'Name';
+
+    /**
+     * @var string
+     */
     private static $plural_name = 'Names';
 
+    /**
+     * @var array
+     */
     private static $has_one = array(
         'Page' => 'Page'
     );
 
-    //private static $summary_fields = array();
+    /**
+     * @var array
+     */
+//    private static $summary_fields = array();
 
+    /**
+     * @var string
+     */
     private static $default_sort = 'SortOrder';
 
 //    /**
