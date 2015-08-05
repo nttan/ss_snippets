@@ -223,7 +223,7 @@ class Name extends DataObject
     {
         /** Set SortOrder */
         if (!$this->SortOrder) {
-            $this->SortOrder = Foo::get()->max('SortOrder') + 1;
+            $this->SortOrder = DataObject::get($this->ClassName)->max('SortOrder') + 1;
         }
         parent::onBeforeWrite();
     }
