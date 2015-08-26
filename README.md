@@ -213,6 +213,8 @@ class Name extends DataObject
 
 //        $fields->addFieldToTab('Root.Main', $bar = TextField::create('Foo'));
 
+        $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 
