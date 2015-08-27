@@ -9,6 +9,7 @@
 2. Templates
   * [Loop](#template-loop)
   * [Modal](#modal)
+  * [Index Template Switching](#index-template-switching)
 3. Model Biz
   * [Array list loop](#array-list-loop)
   * [Dataobject](#data-object)
@@ -29,7 +30,7 @@
 
 ####Section
 
-```
+```php
 /** =========================================
  * Section
  ===========================================*/
@@ -37,7 +38,7 @@
 
 ####Sub Section
 
-```
+```php
 /** -----------------------------------------
  * SubSection
  * ----------------------------------------*/
@@ -45,26 +46,26 @@
 
 ###Dev Mode
 
-```
+```yaml
 Director:
   environment_type: 'dev'
 ```
 
 ###Additional Memory
 
-```
+```php
 ini_set('memory_limit','1000M');
 ```
 
 ###Default Admin
 
-```
+```php
 Security::setDefaultAdmin('admin', 'password');
 ```
 
 ###Remove image max-width in HtmlEditorField
 
-```
+```yaml
 HtmlEditorField:
   insert_width: 1600
 ```
@@ -129,10 +130,26 @@ HtmlEditorField:
 </div><!-- /.modal -->
 ```
 
+###Index Template Switching
+```php
+/**
+ * @return array
+ */
+public function index()
+{
+    if ($this->Foo()) {
+        $class = $this->ClassName . "_Controller";
+        $controller = new $class($this);
+        return $controller->renderWith(array('Some_Template', 'Page'));
+    }
+    return array();
+}
+```
+
 ##Model Biz
 
 ###Array List Loop
-```
+```php
 $arrayList = new ArrayList();
 foreach ($foo as $item) {
     $arrayList->push(new ArrayData(array(
@@ -143,7 +160,7 @@ foreach ($foo as $item) {
 
 ###Data Object
 
-```
+```php
 <?php
 
 /**
@@ -236,7 +253,7 @@ class Name extends DataObject
 ###Gridfield
 [Uses the Grid Field Extensions Module](https://github.com/silverstripe-australia/silverstripe-gridfieldextensions)
 
-```
+```php
 $config = GridFieldConfig_RelationEditor::create(10);
 $config->addComponent(GridFieldOrderableRows::create('SortOrder'))
     ->addComponent(new GridFieldDeleteAction());
@@ -251,7 +268,7 @@ $fields->addFieldToTab('Root.Main', $gridField);
 
 ####Site Config Extension
 
-```
+```php
 <?php
 
 /**
@@ -286,7 +303,7 @@ class SiteConfigExtension extends DataExtension
 
 #####_Config
 
-```
+```yaml
 SiteConfig:
   extensions:
     - SiteConfigExtension
@@ -296,7 +313,7 @@ SiteConfig:
 
 ####Tab
 
-```
+```php
 $fields->findOrMakeTab('Root.Settings.TabName', 'Tab Name');
 $fields->addFieldsToTab('Root.Settings.TabName',
     array()
@@ -306,7 +323,7 @@ $fields->addFieldsToTab('Root.Settings.TabName',
 ###Model Admin
 [Uses the Grid Field Extensions Module](https://github.com/silverstripe-australia/silverstripe-gridfieldextensions)
 
-```
+```php
 <?php
 
 /**
@@ -358,7 +375,7 @@ class CustomModelAdmin extends ModelAdmin
 
 ###Settings
 
-```
+```php
 /**
  * @return mixed
  */
@@ -371,7 +388,7 @@ public function getSettingsFields()
 
 ###Pagination
 
-```
+```php
 /**
  * @return PaginatedList
  */
@@ -389,7 +406,7 @@ public function PaginatedPages()
 
 ###Site Config Tab
 
-```
+```php
 $fields->findOrMakeTab('Root.Settings.Tab', 'Tab');
 $fields->addFieldsToTab('Root.Settings.Tab',
     array(
@@ -402,7 +419,7 @@ $fields->addFieldsToTab('Root.Settings.Tab',
 
 ###Blank HomePage
 
-```
+```php
 <?php
 
 /**
